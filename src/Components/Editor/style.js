@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import ReactMarkdown from 'react-markdown'
 
+import Textarea from 'react-textarea-autosize'
+
 export const HeaderContainer = styled.div`
     width:100%;
 
@@ -49,6 +51,8 @@ export const SaveButton = styled.button`
 `
 
 export const ContentContainer = styled.div`
+    position:relative;
+
     width:100%;
     height:calc(100% - 59px);
 
@@ -59,9 +63,14 @@ export const ContentContainer = styled.div`
     align-items:center;
 `
 
-export const ContentInput = styled.textarea`
+export const ContentInput = styled(Textarea)`
+    position:absolute;
+    top:0;
+    left:0;
+
     width:calc(50% - 10px);
     height:100%;
+    padding:25px 0;
 
     resize:none;
 
@@ -74,6 +83,10 @@ export const ContentInput = styled.textarea`
 `
 
 export const MarkdowPreview = styled(ReactMarkdown)`
+    position:absolute;
+    top:0;
+    right:0;
+
     width:calc(50% - 10px);
     height:100%;
 
