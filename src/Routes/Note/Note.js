@@ -8,13 +8,11 @@ import { Title, HeadContainer, Button, Markdown } from './style';
 export default class Note extends React.Component{
     render(){
         const {match:{params:{id}}} = this.props
-        console.log(id)
         return (
             <Query query={GET_NOTE} variables={{id:id}}>
                 {
                     ({loading, error, data:{note}}) => {
                         if(loading) return null
-                        console.log(note)
                         return (
                             <>
                                 <HeadContainer>
